@@ -1,9 +1,9 @@
-const { Employees, Manager, SalesPerson, SoftwareEngineer } = require('./index');
+const { Employee, Manager, SalesPerson, SoftwareEngineer } = require('./index');
 
-describe("Employees tests without static methods", () => {
-    const preston = new Employees("Preston", "Engineer", 100000);
+describe("Employee tests without static methods", () => {
+    const preston = new Employee("Preston", "Engineer", 100000);
     test("Can create instance of Employee class", () => {
-        expect(preston instanceof Employees).toBe(true);
+        expect(preston instanceof Employee).toBe(true);
     })
 
     test("Can get Employee salary", () => {
@@ -26,12 +26,12 @@ describe("Employees tests without static methods", () => {
 })
 
 describe("Manager tests", () => {
-    const preston = new Employees("Preston", "Engineer", 100000);
+    const preston = new Employee("Preston", "Engineer", 100000);
     const jenna = new Manager("Jenna", "Head of Engineers", 120000, "Software Engineering", 10);
 
-    test("Can create instance of Manager that is a subclass of Employees", () => {
+    test("Can create instance of Manager that is a subclass of Employee", () => {
         expect(jenna instanceof Manager).toBe(true);
-        expect(jenna instanceof Employees).toBe(true);
+        expect(jenna instanceof Employee).toBe(true);
     })
 
     test("Can get the managers department", () => {
@@ -47,8 +47,8 @@ describe("Manager tests", () => {
 describe("Software Engineer Tests", () => {
     const programmer = new SoftwareEngineer("Becca", "Senior Software Engineer", 100000, ["JavaScript", "Java", "Python"]);
     
-    test("Can create instance of SoftwareEngineer that is a subclass of Employees", () => {
-        expect(programmer instanceof Employees).toBe(true)
+    test("Can create instance of SoftwareEngineer that is a subclass of Employee", () => {
+        expect(programmer instanceof Employee).toBe(true)
         expect(programmer instanceof SoftwareEngineer).toBe(true)
     })
 
@@ -65,9 +65,9 @@ describe("Software Engineer Tests", () => {
 describe("SalesPerson Tests", () => {
     const malik = new SalesPerson("Malik", "Enterprise Sale Associate", 90000, ["Vine", "MySpace", "Shutterfly"])
 
-    test("Can create instance of SalesPerson that is a subclass of Employees", () => {
+    test("Can create instance of SalesPerson that is a subclass of Employee", () => {
         expect(malik instanceof SalesPerson).toBe(true);
-        expect(malik instanceof Employees).toBe(true);
+        expect(malik instanceof Employee).toBe(true);
     })
 
     test("Can get totalSales with getSalesNumber", () => {
@@ -83,10 +83,10 @@ describe("SalesPerson Tests", () => {
 
 describe("Employee Static Properties and Methods Tests", () => {
     test("getEmployees returns array of all employees", () => {
-        expect(Employees.getEmployees().length).toBe(5)
+        expect(Employee.getEmployees().length).toBe(5)
     })
 
     test("getTotalPayroll returns salary of all employees created", () => {
-        expect(Employees.getTotalPayroll()).toBe(515000)
+        expect(Employee.getTotalPayroll()).toBe(515000)
     })
 })

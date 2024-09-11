@@ -1,4 +1,4 @@
-const { Employees } = require("./classes/Employees")
+const { Employee } = require("./classes/Employee")
 const { Manager } = require("./classes/Manager")
 const { SalesPerson } = require("./classes/SalesPerson")
 const { SoftwareEngineer } = require("./classes/SoftwareEngineer")
@@ -11,7 +11,7 @@ const { SoftwareEngineer } = require("./classes/SoftwareEngineer")
 
 
 module.exports = {
-    Employees,
+    Employee,
     Manager,
     SalesPerson,
     SoftwareEngineer
