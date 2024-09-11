@@ -17,6 +17,14 @@ class SalesPerson extends Employee {
         this.#totalSales += amount;
     }
 
+    findClient(client){
+        if (this.clients.includes(client)){
+            return client;
+        } else {
+            return 'Client not found';
+        }
+    }
+
 
     
 }

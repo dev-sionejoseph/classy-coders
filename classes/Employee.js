@@ -16,10 +16,10 @@ static getEmployees(){
 }
 
 static getTotalPayroll(){
-    const total = 0;
+    let total = 0;
 
     for (let employee of this.#allEmployees){
-        total += employee.salary;
+        total += employee.#salary;
     }
 
     return total;
@@ -30,7 +30,11 @@ getSalary(){
 }
 
 setSalary(amount){
-    this.#salary = amount;
+    if (amount >= 0 ){
+        this.#salary = amount;
+    } else {
+        throw new Error('Salary cannot be negative');
+    }
 }
 
 getStatus(){
